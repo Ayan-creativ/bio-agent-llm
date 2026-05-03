@@ -1,7 +1,4 @@
-# ============================================================
-#  🧬 Bio-Agent — Groq + Llama 3.3 70B (Free Tier, No Credit Card)
-#  Paste this entire file into a Google Colab cell and run!
-# ============================================================
+#  Bio-Agent — Groq + Llama 3.3 70B (Free Tier, No Credit Card)
 
 # ── STEP 1: Install dependencies ────────────────────────────
 !pip install --quiet --upgrade \
@@ -20,10 +17,10 @@ from langgraph.prebuilt import create_react_agent
 
 # ── STEP 3: API Key setup ────────────────────────────────────
 # Get your FREE key at: https://console.groq.com → API Keys → Create
-print("🔑 Paste your Groq API Key:")
+print(" Paste your Groq API Key:")
 os.environ["GROQ_API_KEY"] = input()
 
-Entrez.email = "your_email@example.com"   # ← put your email here (NCBI requirement)
+Entrez.email = ""   # ← put your email here (NCBI requirement)
 
 # ── STEP 4: Define Bio-Tools (Hands) ────────────────────────
 
@@ -79,7 +76,7 @@ agent_instruction = (
 bio_agent = create_react_agent(llm, tools=tools, prompt=agent_instruction)
 
 # ── STEP 7: Run Queries ──────────────────────────────────────
-print("\n🚀 Bio-Agent is scanning the NCBI database...\n")
+print("\n Bio-Agent is scanning the NCBI database...\n")
 
 # ── Query 1: Protein fetch (Hemoglobin β — from our original context) ───
 query_protein = "What is the name and length of the protein with NCBI ID 'NP_000508'?"
@@ -99,8 +96,8 @@ for label, query in [("PROTEIN FETCH — NP_000508", query_protein),
         print(f"❌ Error: {e}")
 
 # ============================================================
-#  💡 LEVEL-UP IDEAS:
-#  1. Add a PubMed RAG summarizer tool (ask Claude for the code!)
+#  💡My next LEVEL-UP IDEAS:
+#  1. Adding a PubMed RAG summarizer tool !
 #  2. Connect to AlphaFold API for structure prediction
-#  3. Pass your own LSTM model as a tool: @tool def predict_with_lstm(...)
+#  3. Pass my own LSTM model as a tool: @tool def predict_with_lstm(...)
 # ============================================================
