@@ -4,3 +4,5 @@ langchain-community>=0.3.0
 langchain-core>=0.3.0
 langgraph>=0.2.0
 biopython>=1.84
+google account
+Free api key from Grok/Gemini/OpenAi
