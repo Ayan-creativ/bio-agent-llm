@@ -1,21 +1,20 @@
-# bio-agent-llm
-Agentic Bioinformatics AI using LangGraph + Groq + NCBI tools
-# bio-agent-llm
-Agentic Bioinformatics AI using LangGraph + Groq + NCBI tools
-# Bio-Agent — Agentic Bioinformatics with LLMs
+# 🧬 Bio-Agent — Agentic Bioinformatics with LLMs
 
 > An AI-powered bioinformatics agent that autonomously queries the NCBI database using a ReAct (Reason + Act) loop — built with LangGraph, Groq (Llama 3.3 70B), and Biopython.
 
 ---
 
-# What is this?
+## 🧠 What is this?
 
 Bio-Agent is a **portfolio project** demonstrating the intersection of classical bioinformatics workflows and modern **Generative AI / Agentic AI** development.
 
 Instead of writing rigid scripts that call NCBI directly, this project uses an **LLM as a reasoning engine** — the model decides *which tool to call*, *with what input*, and *how to interpret the result* — mimicking how a senior bioinformatician would approach a research query.
 
-# Architecture
+---
 
+## 🏗️ Architecture
+
+```
 User Query
     │
     ▼
@@ -43,14 +42,14 @@ User Query
          Answer
 ```
 
-*Three core components:*
-*The Brain* — `ChatGroq` with `llama-3.3-70b-versatile`, `temperature=0` for deterministic scientific output
-- The Tools (Hands) — Python functions decorated with `@tool` that connect to NCBI via Biopython's `Entrez` module
--The Orchestrator — `create_react_agent` from LangGraph handles the Thought → Action → Observation loop automatically
+**Three core components:**
+- **The Brain** — `ChatGroq` with `llama-3.3-70b-versatile`, `temperature=0` for deterministic scientific output
+- **The Tools (Hands)** — Python functions decorated with `@tool` that connect to NCBI via Biopython's `Entrez` module
+- **The Orchestrator** — `create_react_agent` from LangGraph handles the Thought → Action → Observation loop automatically
 
 ---
 
-#Tech Stack
+## 🛠️ Tech Stack
 
 | Component | Technology |
 |---|---|
@@ -63,17 +62,17 @@ User Query
 
 ---
 
-#Quickstart
+## 🚀 Quickstart
 
-#1. Get a free Groq API key
+### 1. Get a free Groq API key
 Sign up at [console.groq.com](https://console.groq.com) → API Keys → Create Key. No credit card required.
 
-#2. Open in Google Colab
+### 2. Open in Google Colab
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/)
 
 Upload `bio_agent_groq.py` and run all cells.
 
-# 3. Install dependencies
+### 3. Install dependencies
 ```bash
 pip install langchain langchain-groq langchain-community biopython langgraph
 ```
@@ -86,6 +85,9 @@ pip install langchain langchain-groq langchain-community biopython langgraph
 # 3. Call NCBI Gene DB → summarize BRCA1 in Homo sapiens
 # 4. Return a structured scientific report
 ```
+
+---
+
 ## 🔬 Example Queries & Output
 
 **Query 1 — Protein Fetch**
@@ -120,7 +122,8 @@ bio-agent-llm/
 ```
 
 ---
-##  Roadmap / Level-Up Ideas
+
+## 💡 Roadmap / Level-Up Ideas
 
 - [ ] **RAG Research Summarizer** — PubMed abstract retrieval via FAISS vector store
 - [ ] **AlphaFold Integration** — call AlphaFold API as a third agent tool for structure prediction
@@ -130,7 +133,7 @@ bio-agent-llm/
 
 ---
 
-##  About
+## 👤 About
 
 Built by **Ayan** — BSc Microbiology · MSc Medical Biotechnology & Bioinformatics
 
